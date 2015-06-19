@@ -1,10 +1,10 @@
 library(dplyr)
 
-#if folder script *contains* the data set, go inside
+#if working directory *contains* the data set, go inside
 base_dir="UCI HAR Dataset"
 if(file.exists(base_dir))
     setwd(base_dir)
-#else we assume the script is already in the data folder
+#else we assume the working directory is the content of the data folder
 
 #Merge the training and the test sets to create one data set.
     #merge subjects
@@ -44,5 +44,9 @@ avg_va <-withdesc %>%
     group_by(subject_id,act_name) %>%
     summarise_each(funs(mean))
 
+#export the clean data set from step 5 as a csv file
+#file is exported in parent folder
+#since we made sure we went inside the UCI HAR Dataset folder
+write.table(avg_va,file="../tidy.csv",row.names=FALSE)
 
 
