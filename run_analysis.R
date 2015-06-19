@@ -26,21 +26,20 @@ if(file.exists(base_dir))
     test_set <- read.table("test/X_test.txt",col.names=clean_label)
     measurements <- bind_rows(train_set,test_set)
 
-
 #create data frame with all attributes and observations
-alltogether <- data.frame(subjects,activities,measurements)
+    alltogether <- data.frame(subjects,activities,measurements)
 
-#2 Extract only the measurements on the mean and standard deviation for each measurement.
-justcols <- select(alltogether,subject_id,act_id,matches("*(std|mean)($|_)",ignore.case = FALSE))
+#Extract only the measurements on the mean and standard deviation for each measurement.
+    cleanset <- select(alltogether,subject_id,act_id,matches("*(std|mean)($|_)",ignore.case = FALSE))
 
-#3 Use descriptive activity names to name the activities in the data set
-features <- read.table("activity_labels.txt",col.names=c("act_id","act_name"))
-withdesc<-justcols %>%
-    inner_join(features) %>%
-    select(subject_id,act_name,everything(),-act_id)
+#Use descriptive activity names to name the activities in the data set
+    features <- read.table("activity_labels.txt",col.names=c("act_id","act_name"))
+    cleanset<-cleanset %>%
+        inner_join(features) %>%
+        select(subject_id,act_name,everything(),-act_id)
 
 #5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-avg_va <-withdesc %>%
+avg_va <-cleanset %>%
     group_by(subject_id,act_name) %>%
     summarise_each(funs(mean))
 
