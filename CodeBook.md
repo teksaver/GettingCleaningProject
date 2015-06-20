@@ -15,82 +15,85 @@ The data set represent the results of experiments that have been carried out wit
 
 #Output variables
 
-The final file contains 68 variables:
+The final file contains 180 observations and 68 variables :
 
-- subject_id represents the id of the subject of the observation
-- act_name defines the name of the performed activity for the observation
+The initial 10299 observations are grouped by subject and activity and the mean of each group is calculated. The first 2 variables define each group:
 
-The remaining variables are composed as follow : xxx_yyy_zzz or xxx_yyy where
+- *subject_id*: the id of the subject of the observation
+- *act_name*: the name of the performed activity for the observation
+
+The remaining variables are composed as follows : mogo_xxx_yyy_zzz or mogo_xxx_yyy where
+- mogo stands for "mean of grouped observations", since we calculated the mean for each group
 - xxx is the measured element
 - yyy define whether we look at the Mean value (yyy==mean) or the standard deviation (yyy==std)
 - zzz represent the axis : X, Y or Z
 
-tBodyAcc_mean_X
-tBodyAcc_mean_Y
-tBodyAcc_mean_Z
-tBodyAcc_std_X
-tBodyAcc_std_Y
-tBodyAcc_std_Z
-tGravityAcc_mean_X
-tGravityAcc_mean_Y
-tGravityAcc_mean_Z
-tGravityAcc_std_X
-tGravityAcc_std_Y
-tGravityAcc_std_Z
-tBodyAccJerk_mean_X
-tBodyAccJerk_mean_Y
-tBodyAccJerk_mean_Z
-tBodyAccJerk_std_X
-tBodyAccJerk_std_Y
-tBodyAccJerk_std_Z
-tBodyGyro_mean_X
-tBodyGyro_mean_Y
-tBodyGyro_mean_Z
-tBodyGyro_std_X
-tBodyGyro_std_Y
-tBodyGyro_std_Z
-tBodyGyroJerk_mean_X
-tBodyGyroJerk_mean_Y
-tBodyGyroJerk_mean_Z
-tBodyGyroJerk_std_X
-tBodyGyroJerk_std_Y
-tBodyGyroJerk_std_Z
-tBodyAccMag_mean
-tBodyAccMag_std
-tGravityAccMag_mean
-tGravityAccMag_std
-tBodyAccJerkMag_mean
-tBodyAccJerkMag_std
-tBodyGyroMag_mean
-tBodyGyroMag_std
-tBodyGyroJerkMag_mean
-tBodyGyroJerkMag_std
-fBodyAcc_mean_X
-fBodyAcc_mean_Y
-fBodyAcc_mean_Z
-fBodyAcc_std_X
-fBodyAcc_std_Y
-fBodyAcc_std_Z
-fBodyAccJerk_mean_X
-fBodyAccJerk_mean_Y
-fBodyAccJerk_mean_Z
-fBodyAccJerk_std_X
-fBodyAccJerk_std_Y
-fBodyAccJerk_std_Z
-fBodyGyro_mean_X
-fBodyGyro_mean_Y
-fBodyGyro_mean_Z
-fBodyGyro_std_X
-fBodyGyro_std_Y
-fBodyGyro_std_Z
-fBodyAccMag_mean
-fBodyAccMag_std
-fBodyBodyAccJerkMag_mean
-fBodyBodyAccJerkMag_std
-fBodyBodyGyroMag_mean
-fBodyBodyGyroMag_std
-fBodyBodyGyroJerkMag_mean
-fBodyBodyGyroJerkMag_std
+mogo_tBodyAcc_mean_X
+mogo_tBodyAcc_mean_Y
+mogo_tBodyAcc_mean_Z
+mogo_tBodyAcc_std_X
+mogo_tBodyAcc_std_Y
+mogo_tBodyAcc_std_Z
+mogo_tGravityAcc_mean_X
+mogo_tGravityAcc_mean_Y
+mogo_tGravityAcc_mean_Z
+mogo_tGravityAcc_std_X
+mogo_tGravityAcc_std_Y
+mogo_tGravityAcc_std_Z
+mogo_tBodyAccJerk_mean_X
+mogo_tBodyAccJerk_mean_Y
+mogo_tBodyAccJerk_mean_Z
+mogo_tBodyAccJerk_std_X
+mogo_tBodyAccJerk_std_Y
+mogo_tBodyAccJerk_std_Z
+mogo_tBodyGyro_mean_X
+mogo_tBodyGyro_mean_Y
+mogo_tBodyGyro_mean_Z
+mogo_tBodyGyro_std_X
+mogo_tBodyGyro_std_Y
+mogo_tBodyGyro_std_Z
+mogo_tBodyGyroJerk_mean_X
+mogo_tBodyGyroJerk_mean_Y
+mogo_tBodyGyroJerk_mean_Z
+mogo_tBodyGyroJerk_std_X
+mogo_tBodyGyroJerk_std_Y
+mogo_tBodyGyroJerk_std_Z
+mogo_tBodyAccMag_mean
+mogo_tBodyAccMag_std
+mogo_tGravityAccMag_mean
+mogo_tGravityAccMag_std
+mogo_tBodyAccJerkMag_mean
+mogo_tBodyAccJerkMag_std
+mogo_tBodyGyroMag_mean
+mogo_tBodyGyroMag_std
+mogo_tBodyGyroJerkMag_mean
+mogo_tBodyGyroJerkMag_std
+mogo_fBodyAcc_mean_X
+mogo_fBodyAcc_mean_Y
+mogo_fBodyAcc_mean_Z
+mogo_fBodyAcc_std_X
+mogo_fBodyAcc_std_Y
+mogo_fBodyAcc_std_Z
+mogo_fBodyAccJerk_mean_X
+mogo_fBodyAccJerk_mean_Y
+mogo_fBodyAccJerk_mean_Z
+mogo_fBodyAccJerk_std_X
+mogo_fBodyAccJerk_std_Y
+mogo_fBodyAccJerk_std_Z
+mogo_fBodyGyro_mean_X
+mogo_fBodyGyro_mean_Y
+mogo_fBodyGyro_mean_Z
+mogo_fBodyGyro_std_X
+mogo_fBodyGyro_std_Y
+mogo_fBodyGyro_std_Z
+mogo_fBodyAccMag_mean
+mogo_fBodyAccMag_std
+mogo_fBodyBodyAccJerkMag_mean
+mogo_fBodyBodyAccJerkMag_std
+mogo_fBodyBodyGyroMag_mean
+mogo_fBodyBodyGyroMag_std
+mogo_fBodyBodyGyroJerkMag_mean
+mogo_fBodyBodyGyroJerkMag_std
 
 #How were the measurements made?
 

@@ -65,7 +65,8 @@ The resulting data set repsects the 3 principles of dity data defined in Hadley 
     - We remove the *act_id* column to keep only the descriptive name using dplyr's *select* command.
 - Finally, we create a second, independent tidy data set with the average of each variable for each activity and each subject:
     - first we group by subject and activity using dplyr's *group_by* command,
-    - then we calculate the mean for each group using dplyrs- *summarise_each* command.
+    - then we calculate the mean for each group using dplyrs- *summarise_each* command,
+    - finally we use the *setNames* function to prefix each variable with the *mogo_* string, to indicate that each variable represent the "mean of grouped observations"
 - The output is the *avg_va* variable containing 180 observations (30 subjects, each  performing 6 activities)
 - This data frame is exported into the *tidy.csv* file using the *write.table* command. This file has been uploaded as requested in part 1 of the assignment.
     - This file can be loaded into R for inspection with the `read.table("tidy.csv", header = TRUE)` command. If you just generated the file from the script, make sure you go up one directory using the `setwd("..")` command, since the file is created in the folder tha *contains* the *UCI HAR Dataset* folder.

@@ -38,10 +38,11 @@ if(file.exists(base_dir))
         inner_join(features) %>%
         select(subject_id,act_name,everything(),-act_id)
 
-#5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject. We prefix each calculated average with the "mbgv_" string for "mean of grouped variable" using the setNames function
 avg_va <-cleanset %>%
     group_by(subject_id,act_name) %>%
-    summarise_each(funs(mean))
+    summarise_each(funs(mean)) %>%
+    setNames(c(names(.)[1:2], paste0("mogo_",names(.)[0:-2])))
 
 #export the clean data set from step 5 as a csv file
 #file is exported in parent folder
